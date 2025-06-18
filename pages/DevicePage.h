@@ -15,17 +15,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <QApplication>
+#pragma once
 
-#include "mainwindow.h"
+#include <QWidget>
 
-int main(int argc, char *argv[]) {
-    QApplication::setApplicationName("IGCIT Helper");
+#include "../include/registryUtils.h"
+#include "../Logger.h"
 
-    QApplication a(argc, argv);
-    MainWindow w;
+namespace IGCIT {
+    class DevicePage final: public QWidget {
+    private:
+        QSharedPointer<Logger> logger;
 
-    w.setWindowTitle("IGCIT Helper");
-    w.show();
-    return a.exec();
+        [[nodiscard]] QString getProcessorString() const;
+        [[nodiscard]] QString getManufacturer() const;
+        [[nodiscard]] QString getProductName() const;
+        [[nodiscard]] QString getRAMString() const;
+        [[nodiscard]] QList<std::pair<QString, QString>> getGPUList() const;
+
+    public:
+        DevicePage();
+    };
 }

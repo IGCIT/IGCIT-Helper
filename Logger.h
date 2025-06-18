@@ -15,17 +15,36 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <QApplication>
+#pragma once
 
-#include "mainwindow.h"
+#include <QObject>
+#include <QSharedPointer>
 
-int main(int argc, char *argv[]) {
-    QApplication::setApplicationName("IGCIT Helper");
+namespace IGCIT {
+    class Logger final: public QObject {
+        Q_OBJECT
 
-    QApplication a(argc, argv);
-    MainWindow w;
+    private:
+        static inline QSharedPointer<Logger> instance;
 
-    w.setWindowTitle("IGCIT Helper");
-    w.show();
-    return a.exec();
+        Logger() = default;
+
+    public:
+        Logger(const Logger &) = delete;
+        Logger &operator=(const Logger &) = delete;
+
+        static QSharedPointer<Logger> getInstance() {
+            if (instance.isNull())
+                instance.reset(new Logger);
+
+            return instance;
+        }
+
+        void writeLog(const QString &msg) {
+            emit logSent(msg);
+        }
+
+    signals:
+        void logSent(const QString &msg);
+    };
 }

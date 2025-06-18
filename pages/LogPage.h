@@ -15,17 +15,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <QApplication>
+#pragma once
 
-#include "mainwindow.h"
+#include <QTextEdit>
 
-int main(int argc, char *argv[]) {
-    QApplication::setApplicationName("IGCIT Helper");
+namespace IGCIT {
+    class LogPage final: public QWidget {
+        Q_OBJECT
 
-    QApplication a(argc, argv);
-    MainWindow w;
+    private:
+        QTextEdit *logTx = nullptr;
 
-    w.setWindowTitle("IGCIT Helper");
-    w.show();
-    return a.exec();
+    public:
+        LogPage();
+
+        void writeLog(const QString &msg) const { logTx->append(msg); }
+
+    private slots:
+        void onClearBtnClicked() const;
+    };
 }

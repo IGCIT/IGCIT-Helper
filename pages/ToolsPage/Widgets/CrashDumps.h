@@ -15,17 +15,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <QApplication>
+#pragma once
 
-#include "mainwindow.h"
+#include <QGroupBox>
 
-int main(int argc, char *argv[]) {
-    QApplication::setApplicationName("IGCIT Helper");
+namespace IGCIT {
+    class CrashDumps final: public QGroupBox {
+        Q_OBJECT
 
-    QApplication a(argc, argv);
-    MainWindow w;
+    public:
+        CrashDumps();
 
-    w.setWindowTitle("IGCIT Helper");
-    w.show();
-    return a.exec();
+    private slots:
+        void onEnableBtnClicked() const;
+        void onResetBtnClicked() const;
+        void onClearBtnClicked();
+        void onFixWatchdogBtnClicked() const;
+        void onCollectBtnClicked();
+    };
 }

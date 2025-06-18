@@ -15,17 +15,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <QApplication>
+#pragma once
 
-#include "mainwindow.h"
+#include <QGroupBox>
+#include <QSpinBox>
 
-int main(int argc, char *argv[]) {
-    QApplication::setApplicationName("IGCIT Helper");
+namespace IGCIT {
+    class TDRDelay final: public QGroupBox {
+        Q_OBJECT
 
-    QApplication a(argc, argv);
-    MainWindow w;
+    private:
+        static constexpr wchar_t tdrPath[] = LR"(SYSTEM\CurrentControlSet\Control\GraphicsDrivers)";
+        QSpinBox *tdr = nullptr;
+        QSpinBox *tdrDdi = nullptr;
 
-    w.setWindowTitle("IGCIT Helper");
-    w.show();
-    return a.exec();
+    public:
+        TDRDelay();
+
+    private slots:
+        void onApplyBtnClicked() const;
+        void onResetBtnClicked() const;
+    };
 }

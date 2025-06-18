@@ -15,17 +15,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <QApplication>
+#pragma once
 
-#include "mainwindow.h"
+#include <winsdkver.h>
 
-int main(int argc, char *argv[]) {
-    QApplication::setApplicationName("IGCIT Helper");
-
-    QApplication a(argc, argv);
-    MainWindow w;
-
-    w.setWindowTitle("IGCIT Helper");
-    w.show();
-    return a.exec();
-}
+#define WIN32_LEAN_AND_MEAN
+#ifndef UNICODE
+#define UNICODE
+#endif
+#define WINVER _WIN32_WINNT_WIN10
+#define _WIN32_WINNT _WIN32_WINNT_WIN10
+#include <windows.h>
