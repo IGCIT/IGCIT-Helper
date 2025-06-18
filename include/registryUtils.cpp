@@ -25,13 +25,13 @@ namespace IGCIT {
 
         ret = RegOpenKeyEx(key, subKey, 0, openSAM, &hkey);
         if (ret != ERROR_SUCCESS) {
-            Logger::getInstance()->writeLog(QString("setRegDword: Failed to open %1, code %2").arg(subKey).arg(ret));
+            Logger::getInstance()->writeLog(QString("setRegValue: Failed to open %1, code %2").arg(subKey).arg(ret));
             return false;
         }
 
         ret = RegSetKeyValue(hkey, nullptr, value, dataType, data, dataSz);
         if (ret != ERROR_SUCCESS)
-            Logger::getInstance()->writeLog(QString("setRegDword: Failed to set %1, code %2").arg(value).arg(ret));
+            Logger::getInstance()->writeLog(QString("setRegValue: Failed to set %1, code %2").arg(value).arg(ret));
 
         RegCloseKey(hkey);
         return ret == ERROR_SUCCESS;
