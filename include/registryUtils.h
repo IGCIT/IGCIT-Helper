@@ -22,12 +22,12 @@
 #include <QString>
 
 namespace IGCIT {
-        [[nodiscard]] QString getRegSZValue(HKEY key, LPCWSTR subKey, LPCWSTR value);
-        [[nodiscard]] DWORD getRegDword(HKEY key, LPCWSTR subKey, LPCWSTR value, DWORD defaultValue);
-        [[nodiscard]] bool setRegDword(HKEY key, LPCWSTR subKey, LPCWSTR value, DWORD data, REGSAM openSAM = KEY_SET_VALUE);
-        [[nodiscard]] bool setRegExpandSZ(HKEY key, LPCWSTR subKey, LPCWSTR value, LPCWSTR data, REGSAM openSAM = KEY_SET_VALUE);
-        [[nodiscard]] bool setRegMultiSZ(HKEY key, LPCWSTR subKey, LPCWSTR value, LPCWSTR data, REGSAM openSAM = KEY_SET_VALUE);
-        [[nodiscard]] bool deleteRegValue(HKEY key, LPCWSTR subKey, LPCWSTR value, REGSAM openSAM = KEY_SET_VALUE);
-        [[nodiscard]] bool deleteRegTree(HKEY key, LPCWSTR subKey, LPCWSTR value);
-        [[nodiscard]] bool createRegKey(HKEY key, LPCWSTR subKey, LPCWSTR createKey, REGSAM openSAM, REGSAM createSAM);
+    [[nodiscard]] QString getRegSZValue(HKEY key, LPCWSTR subKey, LPCWSTR value);
+    [[nodiscard]] DWORD getRegDword(HKEY key, LPCWSTR subKey, LPCWSTR value, DWORD defaultValue);
+    [[nodiscard]] bool setRegDword(HKEY key, LPCWSTR subKey, LPCWSTR value, DWORD data, REGSAM openSAM = KEY_SET_VALUE);
+    [[nodiscard]] bool setRegExpandSZ(HKEY key, LPCWSTR subKey, LPCWSTR value, LPCWSTR data, REGSAM openSAM = KEY_SET_VALUE);
+    [[nodiscard]] bool setRegMultiSZ(HKEY key, LPCWSTR subKey, LPCWSTR value, LPCWSTR data, REGSAM openSAM = KEY_SET_VALUE);
+    [[nodiscard]] bool deleteRegValue(HKEY key, LPCWSTR subKey, LPCWSTR value, REGSAM openSAM = KEY_SET_VALUE);
+    [[nodiscard]] bool deleteRegTree(HKEY key, LPCWSTR subKey, LPCWSTR value);
+    [[nodiscard]] bool createRegKey(HKEY key, LPCWSTR subKey, LPCWSTR createKey, REGSAM openSAM, REGSAM createSAM);
 }

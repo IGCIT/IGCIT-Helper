@@ -52,7 +52,7 @@ namespace IGCIT {
         lyt->addLayout(tdrLyt);
         lyt->addLayout(tdrDdiLyt);
         lyt->addLayout(btnLyt);
-        lyt->addItem(new QSpacerItem(1, 4, QSizePolicy::Expanding, QSizePolicy::Fixed));
+        lyt->addSpacing(4);
         lyt->addWidget(note);
 
         setAlignment(Qt::AlignCenter);

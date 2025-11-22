@@ -54,34 +54,34 @@ namespace IGCIT {
         gpusInfoLbl->setFont(gpusInfoF);
 
         osLyt->addWidget(new QLabel("OS version:"));
-        osLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        osLyt->addStretch();
         osLyt->addWidget(osLbl);
 
         cpuLyt->addWidget(new QLabel("Processor:"));
-        cpuLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        cpuLyt->addStretch();
         cpuLyt->addWidget(cpuLbl);
 
         ramLyt->addWidget(new QLabel("RAM:"));
-        ramLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        ramLyt->addStretch();
         ramLyt->addWidget(new QLabel(getRAMString()));
 
         modelLyt->addWidget(new QLabel("Model:"));
-        modelLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        modelLyt->addStretch();
         modelLyt->addWidget(modelLbl);
 
         manufLyt->addWidget(new QLabel("Manufacturer:"));
-        manufLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        manufLyt->addStretch();
         manufLyt->addWidget(manufLbl);
 
         lyt->addWidget(osInfoLbl);
-        lyt->addItem(new QSpacerItem(1, 4, QSizePolicy::Expanding, QSizePolicy::Fixed));
+        lyt->addSpacing(4);
         lyt->addLayout(osLyt);
         lyt->addLayout(cpuLyt);
         lyt->addLayout(ramLyt);
         lyt->addLayout(modelLyt);
         lyt->addLayout(manufLyt);
         lyt->addWidget(gpusInfoLbl);
-        lyt->addItem(new QSpacerItem(1, 4, QSizePolicy::Expanding, QSizePolicy::Fixed));
+        lyt->addSpacing(4);
 
         if (gpuList.isEmpty()) {
             QLabel *noGpuLbl = new QLabel("no GPU found");
@@ -97,7 +97,7 @@ namespace IGCIT {
             gpuLbl->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
 
             gpuLyt->addWidget(gpuLbl);
-            gpuLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+            gpuLyt->addStretch();
             gpuLyt->addWidget(new QLabel(driver));
 
             lyt->addLayout(gpuLyt);

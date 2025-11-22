@@ -286,3 +286,4 @@ tmp/
 /*-release/
 /out/
 .idea/
+win.rc

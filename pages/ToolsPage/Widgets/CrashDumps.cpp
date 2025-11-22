@@ -56,7 +56,7 @@ namespace IGCIT {
 
         lyt->addLayout(row1);
         lyt->addLayout(row2);
-        lyt->addItem(new QSpacerItem(1, 4, QSizePolicy::Expanding, QSizePolicy::Fixed));
+        lyt->addSpacing(4);
         lyt->addWidget(note);
 
         setAlignment(Qt::AlignCenter);

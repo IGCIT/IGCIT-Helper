@@ -17,12 +17,14 @@
  */
 #pragma once
 
-#include <winsdkver.h>
-
 #define WIN32_LEAN_AND_MEAN
+#define NOSOUND
+#define NOPROFILER
+#define NOMINMAX
+#define NOGDI
+#define NOVIRTUALKEYCODES
+#define NOCLIPBOARD
 #ifndef UNICODE
 #define UNICODE
 #endif
-#define WINVER _WIN32_WINNT_WIN10
-#define _WIN32_WINNT _WIN32_WINNT_WIN10
 #include <windows.h>

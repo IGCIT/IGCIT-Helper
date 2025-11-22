@@ -20,12 +20,9 @@
 #include "mainwindow.h"
 
 int main(int argc, char *argv[]) {
-    QApplication::setApplicationName("IGCIT Helper");
-
     QApplication a(argc, argv);
     MainWindow w;
 
-    w.setWindowTitle("IGCIT Helper");
     w.show();
     return a.exec();
 }

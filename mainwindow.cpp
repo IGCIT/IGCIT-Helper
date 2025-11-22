@@ -23,9 +23,10 @@
 #include "pages/DevicePage.h"
 #include "pages/ToolsPage/ToolsPage.h"
 
-MainWindow::MainWindow() {
-	ui = new Ui::MainWindow;
+MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
 	ui->setupUi(this);
+    setWindowTitle("IGCIT Helper");
+	setWindowIcon(QIcon(":/ico/helper"));
 
 	QVBoxLayout *lyt = new QVBoxLayout();
 	QHBoxLayout *bottomLyt = new QHBoxLayout();

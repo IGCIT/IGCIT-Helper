@@ -36,7 +36,7 @@ private:
 	int logPageIdx = 0;
 
 public:
-	MainWindow();
+	explicit MainWindow(QWidget *parent = nullptr);
 	~MainWindow() override;
 
 private slots:

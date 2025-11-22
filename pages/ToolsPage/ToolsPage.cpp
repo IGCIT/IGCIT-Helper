@@ -36,7 +36,7 @@ namespace IGCIT {
         scrollWidgLyt->addWidget(new TDRDelay);
         scrollWidgLyt->addWidget(new SSU);
         scrollWidgLyt->addWidget(new CrashDumps);
-        scrollWidgLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        scrollWidgLyt->addStretch();
         lyt->addWidget(scrollArea);
 
         scrollArea->widget()->setLayout(scrollWidgLyt);

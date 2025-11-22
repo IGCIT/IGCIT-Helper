@@ -34,7 +34,7 @@ namespace IGCIT {
         logTx->setReadOnly(true);
         clearBtn->setMinimumWidth(60);
 
-        clearLyt->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        clearLyt->addStretch();
         clearLyt->addWidget(clearBtn);
         lyt->addWidget(logTx, 1);
         lyt->addLayout(clearLyt);
